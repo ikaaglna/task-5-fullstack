@@ -18,7 +18,8 @@ use App\Http\Controllers\LoginController;
 
 
 Route::post('/login', [LoginController::class, 'login']);
-Route::middleware('auth:api')->get('/all', [LoginController::class, 'users ']);
+Route::middleware('auth:api')->get('/all', [LoginController::class, 'users']);
+//Route::get('/all', [LoginController::class, 'users']);
 
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

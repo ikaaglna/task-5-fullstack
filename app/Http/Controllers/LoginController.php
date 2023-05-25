@@ -21,7 +21,8 @@ class LoginController extends Controller
             return response()->json($text);
         }
 
-        $accessToken = Auth::user()->createToken('accessToken')->accessToken;
+        $user = Auth::user();
+        $accessToken = $user->createToken('accessToken')->accessToken;
         return response()->json([
             'user' => Auth::user(),
             'access_token' => $accessToken
